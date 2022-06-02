@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+
+    <body>
+        <img src="https://github.com/MariyaSha/SimpleGreetingApp/blob/main/logo.png?raw=true">
+        <!-- <img src="https://flamingtext.com/Word-Logos/say/"> -->
+        <br>
+        <br>
+
+        <form action="http://localhost:5000/greet/" Method="post">
+            {% for message in get_flashed_messages() %}
+            <p> {{message}}</p>
+        {% endfor %}
+
+        <br>
+        <input type ="text", name ="name_input">
+        <br>
+        <br>
+
+        <input type="submit" value="Greet" id="greet">
+        </form>
+    </body>
+</html>
+
